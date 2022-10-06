@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import { useState } from 'react';
-import { StyleSheet, Text, TextInput, View, Button } from 'react-native';
+import { StyleSheet, Text, TextInput, View, TouchableOpacity    } from 'react-native';
 
 export default function App() {
   const [idade, setIdade ] = useState('')
@@ -25,9 +25,9 @@ export default function App() {
       <TextInput style={ styles.input} placeholder="Peso..."onChangeText={ setPeso }/>
 
 
-      <View style={ styles.button }>
-        <Button title='Calcular' onPress={ calcular }/>
-      </View>
+      <TouchableOpacity style={ styles.button }>
+        <Text style={ styles.buttonText }>Calcular</Text>
+      </TouchableOpacity>
 
       <Text style={ styles.imc }>{ imc }</Text>
       <Text style={ styles.mensagem }>{ exibirMensagem() }</Text>
@@ -60,6 +60,23 @@ const styles = StyleSheet.create({
   },
   mensagem: {
 
+  },
+  button: {
+    
+    backgroundColor: 'blue',
+    padding: 10,
+    elevation: 8,
+    width: '50%',
+    justifyContent: 'center',
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    marginTop: 10,
+    borderRadius: 5
+
+  },
+  buttonText: {
+    alignSelf: 'center',
+    color: "#fff",
   }
 
 });
